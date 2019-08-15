@@ -8,6 +8,41 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {}
+//* Solution 1
+// function reverseInt(n) {
+//   if (n >= 0) {
+//     return Number(
+//       String(n)
+//         .split('')
+//         .reverse()
+//         .join('')
+//     )
+//   } else {
+//     return (
+//       -1 *
+//       Number(
+//         String(n)
+//           .split('')
+//           .slice(1)
+//           .reverse()
+//           .join('')
+//       )
+//     )
+//   }
+// }
 
-module.exports = reverseInt;
+//* Solution 2
+function reverseInt(n) {
+  return (
+    Math.sign(n) *
+    parseInt(
+      n
+        .toString()
+        .split('')
+        .reverse()
+        .join('')
+    )
+  )
+}
+
+module.exports = reverseInt
