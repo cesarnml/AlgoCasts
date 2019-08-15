@@ -12,6 +12,15 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+  ;[...Array(n)]
+    .map((_, i) => i + 1)
+    .forEach(i => {
+      let str = ''
+      if (i % 3 === 0) str += 'fizz'
+      if (i % 5 === 0) str += 'buzz'
+      console.log(str ? str : i)
+    })
+}
 
-module.exports = fizzBuzz;
+module.exports = fizzBuzz

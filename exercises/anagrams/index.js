@@ -8,6 +8,17 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+  return shapeString(stringA) === shapeString(stringB)
+}
 
-module.exports = anagrams;
+function shapeString(str) {
+  return str
+    .replace(/[^a-zA-z]/g, '')
+    .split('')
+    .map(char => char.toLowerCase())
+    .sort((a, b) => b < a)
+    .join('')
+}
+
+module.exports = anagrams
